@@ -13,7 +13,7 @@ import reactor.core.publisher.Mono;
 public class SimpleController {
   private final Logger log = LoggerFactory.getLogger(SimpleController.class);
 
-  @Get
+  @Get("/hello")
   @NewSpan("new-hello")
   //@WithSpan("with-hello")
   public String hello() {
@@ -21,7 +21,7 @@ public class SimpleController {
 	return getMessage();
   }
 
-  @Get
+  @Get("/helloReactive")
   @NewSpan("new-helloReactive")
   //@WithSpan("with-helloReactive")
   public Mono<String> helloReactive() {
